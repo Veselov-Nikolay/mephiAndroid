@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Ulitka</string>
+    <string name="TitleExecute">Выполнить</string>
+    <string name="Hint">Введите числа</string>
+</resources>
