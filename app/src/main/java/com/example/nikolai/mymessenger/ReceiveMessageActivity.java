@@ -10,7 +10,12 @@ import android.widget.Toast;
 
 public class ReceiveMessageActivity extends Activity {
 
-    public static String EXTRA_MESSAGE = "message";
+    public static final String EXTRA_MESSAGE = "message";
+    public static void start(Activity activity, String message) {
+        Intent intent = new Intent(activity, ReceiveMessageActivity.class);
+        intent.putExtra(EXTRA_MESSAGE, message);
+        activity.startActivity(intent);
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,7 +23,7 @@ public class ReceiveMessageActivity extends Activity {
         setContentView(R.layout.activity_receive_message);
         Intent intent = getIntent();
         String messageText = intent.getStringExtra(EXTRA_MESSAGE);
-        TextView messageView = (TextView)findViewById(R.id.message);
+        TextView messageView = findViewById(R.id.message);
         messageView.setText(messageText);
     }
     public void SendToEmailComponent(View view) {
